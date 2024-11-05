@@ -1,0 +1,237 @@
+/* Base Styles */
+.main-div {
+  width: 100%;
+  min-height: 100%;
+  background-color: #f8fafc;
+}
+
+.navgationbar-brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+}
+
+.navigationbar {
+  display: flex;
+  min-height: 50px;
+  max-height: 70px;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.brandlogo {
+  min-height: 30px;
+  max-height: 40px;
+}
+
+.imagelogodiv {
+  width: 100%;
+}
+
+.formitemss {
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+  align-items: center;
+  width: 60%;
+  margin-left: 60px;
+}
+
+.navigation-bookshelves,
+.navgation-home {
+  color: #0284c7;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.navi-butn {
+  padding: 5px;
+  margin: 0px;
+  color: white;
+  font-size: auto;
+  border: transparent;
+  border-radius: 4px;
+  background-color: #0284c7;
+}
+
+.home-text {
+  margin: 50px 0px 0px 120px;
+  font-family: Inter;
+  font-size: 40px;
+  color: #1e293b;
+}
+
+.paragraph-content {
+  margin: 20px 0px 0px 120px;
+  font-family: Inter;
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.top-rated-div {
+  margin: 25px 100px 70px 100px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px; /* Optional: Rounded corners */
+}
+
+.top-rated-books {
+  margin: 30px;
+  max-height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-rated-styles {
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.find-butn {
+  padding: 10px 12px; /* Original padding */
+  color: white;
+  margin-right: 50px;
+  border: transparent;
+  border-radius: 4px;
+  background-color: #0284c7;
+}
+
+.Carousel-div {
+  margin: 40px;
+}
+
+.imagebox {
+  width: 70%;
+  max-width: 100%; /* Responsive image */
+}
+
+.slide-container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+}
+
+.slick-slide img {
+  display: block;
+  margin: 0 auto;
+  max-height: 400px;
+  object-fit: cover;
+  max-width: 100%; /* Responsive images */
+}
+
+.caption {
+  display: flex;
+  justify-content: center;
+  color: black;
+  font-size: 2em;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  gap: 2rem;
+  color: #3d3c3c;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  color: #3d3c3c;
+}
+
+/* Responsive Adjustments */
+
+/* Medium Devices (Tablets) */
+@media (max-width: 768px) {
+  .formitemss {
+    flex-direction: row; /* Ensure items are in a row */
+    width: 100%; /* Full width */
+    gap: 2rem; /* Adjust gap for smaller devices */
+    margin-left: 0; /* Remove left margin */
+    justify-content: center; /* Center items */
+  }
+
+  .home-text {
+    font-size: 32px; /* Adjust font size */
+    margin-left: 0; /* Center align */
+    text-align: center; /* Center text */
+  }
+
+  .paragraph-content {
+    margin-left: 0; /* Center align */
+    text-align: center; /* Center text */
+    font-size: 18px; /* Adjust font size */
+  }
+
+  .top-rated-div {
+    margin: 25px 20px; /* Adjust margins for smaller screens */
+  }
+
+  .top-rated-books {
+    flex-direction: row; /* Keep items in a row */
+    align-items: center; /* Align items vertically */
+  }
+
+  .find-butn {
+    margin-top: 15px; /* Space above button */
+    margin-right: 0; /* Center button */
+    width: auto; /* Maintain auto width to match original size */
+    padding: 10px 12px; /* Keep the original padding */
+  }
+
+  .imagebox {
+    width: 100%; /* Full width */
+    max-height: 200px; /* Adjust height */
+  }
+
+  .caption {
+    font-size: 1.5em; /* Adjust caption size */
+  }
+
+  .footer-icons {
+    flex-direction: row; /* Keep footer icons in a row */
+  }
+}
+
+/* Small Devices (Mobile Phones) */
+@media (max-width: 480px) {
+  .home-text {
+    font-size: 28px; /* Adjust font size */
+    margin: 20px 0; /* Adjust margins */
+  }
+
+  .paragraph-content {
+    font-size: 16px; /* Adjust font size */
+  }
+
+  .top-rated-styles {
+    font-size: 20px; /* Adjust font size */
+  }
+
+  .find-butn {
+    font-size: 14px; /* Adjust font size */
+    padding: 10px 12px; /* Keep original padding */
+    margin-top: 10px; /* Add space above the button */
+    width: auto; /* Maintain auto width */
+  }
+
+  .footer {
+    flex-direction: row; /* Keep footer content in a row */
+  }
+
+  .footer-icons {
+    flex-direction: row; /* Keep footer icons in a row */
+  }
+}

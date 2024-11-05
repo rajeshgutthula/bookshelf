@@ -1,0 +1,280 @@
+.main-divcontainer {
+  width: 100%;
+  min-height: 100%;
+  background-color: #f8fafc;
+}
+
+.brandlogo {
+  min-height: 30px;
+  max-height: 40px;
+}
+
+.imagelogodiv {
+  width: 100%;
+}
+
+/* Prevent horizontal scrolling */
+body {
+  overflow-x: hidden;
+}
+
+.categories-div {
+  width: 20%;
+  padding: 10px;
+  background-color: #ffffff;
+}
+
+.categorieitems-div {
+  width: 100%;
+}
+
+.All-elements {
+  font-family: Inter;
+  color: #0284c7;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.headingiteams {
+  font-family: Inter;
+  color: #64748b;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.bookscontainer {
+  width: 75%;
+}
+
+.second-div {
+  width: 96%;
+  margin: 30px;
+}
+
+.second-main-div {
+  width: 95%;
+  display: flex;
+}
+
+.search-bar-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 20px;
+  max-height: 30px;
+  width: 90%;
+}
+
+.text-div {
+  display: flex;
+}
+
+.input-group-text {
+  border: 1px solid gray;
+  color: gray;
+  border-radius: 2px;
+}
+
+.cards-main-container {
+  padding-left: 30px;
+  padding-top: 25px;
+  width: 45%;
+}
+
+.card-image {
+  max-width: 133px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.books-details-div {
+  padding-left: 10px;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.rating-div {
+  display: flex;
+}
+
+.card-Div {
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stars {
+  color: gold;
+}
+
+.card-Div:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: #f0f8ff;
+}
+
+.font-for-all {
+  font-family: Inter;
+}
+
+.font-size {
+  font-size: small;
+}
+
+.heading {
+  color: #334155;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0px;
+  overflow-wrap: break-word;
+}
+
+.descrition {
+  font-family: Inter;
+  padding-top: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.dynamic-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+/* Tablet Styles (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .categories-div {
+    width: 20%;
+    padding: 10px;
+  }
+
+  .bookscontainer {
+    width: 100%;
+  }
+
+  .second-div {
+    width: 100%;
+    margin: 6px;
+  }
+
+  .second-main-div {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .search-bar-div {
+    margin: 0 20px;
+    width: 85%;
+  }
+
+  .categorieitems-div {
+    display: block;
+    padding: 0;
+  }
+
+  .All-elements,
+  .headingiteams {
+    padding: 12px 8px;
+    border-radius: 5px;
+    text-align: left;
+    flex: none;
+  }
+
+  .dynamic-div {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .cards-main-container {
+    width: 40%;
+    padding-left: 0px;
+  }
+
+  .card-Div {
+    width: 100%;
+    padding: 0px;
+  }
+}
+
+/* Mobile Styles (up to 768px) */
+@media (max-width: 765px) {
+  .categories-div {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .categorieitems-div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 10px;
+    gap: 10px;
+  }
+
+  .All-elements,
+  .headingiteams {
+    padding: 12px 8px;
+    border: 1px solid #0284c7;
+    border-radius: 12px;
+    background-color: white;
+    color: #0284c7;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    flex: 1 1 calc(33.33% - 10px);
+    max-width: calc(33.33% - 10px);
+  }
+
+  .All-elements:hover,
+  .headingiteams:hover {
+    background-color: #0284c7;
+    color: white;
+  }
+
+  .bookscontainer {
+    width: 100%;
+  }
+
+  .second-div {
+    width: 90%;
+    margin: 10px;
+  }
+
+  .second-main-div {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-bar-div {
+    margin: 0;
+    width: 90%;
+  }
+
+  .dynamic-div {
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+  }
+
+  .cards-main-container {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .card-Div {
+    width: 100%;
+    margin: 10px 0;
+  }
+}

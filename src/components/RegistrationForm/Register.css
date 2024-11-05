@@ -1,0 +1,200 @@
+/* Base Styles */
+.main-container {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(112, 112, 199),
+    rgb(5, 5, 156)
+  );
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 20px;
+}
+
+.middlebackground-div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.middlediv {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  max-width: 900px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Image Container */
+.imagedivcontainer {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a1a2e;
+}
+
+.imageimg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px 0 0 10px;
+}
+
+/* Form Container */
+.formcontainer {
+  width: 50%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(29, 83, 232, 0.9);
+}
+
+.registrationformitems {
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputEle {
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px solid white;
+  color: white;
+  padding: 10px;
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.signup-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #1d53e8;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.signup-btn:hover {
+  background-color: #1a46c2;
+}
+
+.corner-btns {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.register-btn,
+.login-btn {
+  padding: 8px 16px;
+  margin: 0 5px;
+  border-radius: 5px;
+  background-color: #1d53e8;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.register-btn:hover,
+.login-btn:hover {
+  background-color: #1a46c2;
+}
+
+/* Responsive Adjustments */
+
+/* For laptop and tablet screens */
+@media (max-width: 1024px) {
+  .middlediv {
+    max-width: 90%;
+    height: auto;
+  }
+
+  .imagedivcontainer {
+    width: 45%;
+  }
+
+  .formcontainer {
+    width: 55%;
+    padding: 20px;
+  }
+
+  .imageimg {
+    border-radius: 10px 0 0 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .middlediv {
+    flex-direction: column;
+    max-width: 600px;
+  }
+
+  .imagedivcontainer,
+  .formcontainer {
+    width: 100%;
+  }
+
+  .imageimg {
+    border-radius: 10px 10px 0 0;
+  }
+
+  .formcontainer {
+    padding: 20px;
+    align-items: center;
+  }
+
+  .registrationformitems {
+    max-width: 300px;
+  }
+
+  .inputEle {
+    font-size: 14px;
+  }
+
+  .signup-btn,
+  .register-btn,
+  .login-btn {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .corner-btns {
+    justify-content: center;
+  }
+
+  .register-btn,
+  .login-btn {
+    width: 48%;
+    margin: 5px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .inputEle {
+    font-size: 12px;
+  }
+
+  .signup-btn,
+  .register-btn,
+  .login-btn {
+    font-size: 12px;
+    padding: 8px;
+  }
+}

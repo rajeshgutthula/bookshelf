@@ -1,0 +1,13 @@
+.footer-icons{
+    display: flex;
+    justify-content:center;
+    padding-top:30px;
+    gap: 2rem;
+    color: #3D3C3C;
+}
+.footer{
+    display: flex;
+    justify-content:center;
+    padding-top:10px;
+    color:#3D3C3C;
+}
