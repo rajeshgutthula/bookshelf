@@ -6,6 +6,7 @@ import BookIcon from "@mui/icons-material/Book"; // Importing book icon
 import LogoutIcon from "@mui/icons-material/Logout"; // Importing logout icon
 import { useNavigate } from "react-router-dom";
 import cookies from 'js-cookie';
+import logo from "../../images/Homelogo1.png";
 import "./Header.css";
 
 const Header = () => {
@@ -34,7 +35,7 @@ const Header = () => {
             <Toolbar>
                 {/* Logo */}
                 <a className="navbar-brandimg" href="$">
-                    <img className="brandlogo" src="/images/Homelogo1.png" alt="homelogo" />
+                    <img className="brandlogo" src={logo} alt="homelogo" />
                 </a>
 
                 {/* Desktop Menu Links */}

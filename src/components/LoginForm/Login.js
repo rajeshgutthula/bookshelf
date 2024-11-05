@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import { useState,useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import cookies from 'js-cookie';
+import loginIcon from "../../images/Bookslogo1.jpeg";
 import "./Login.css";
 
 
@@ -64,7 +65,7 @@ const Login=()=>{
         <div className="mainn-container">
           <div className="second-main">
             <div className="imagediv">
-              <img className="image" src="/images/Bookslogo1.jpeg" alt="login"/>
+              <img className="image" src={loginIcon} alt="login"/>
             </div>
             <div className="secondHalf">
               <div className="corner-btn">
