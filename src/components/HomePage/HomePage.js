@@ -6,19 +6,19 @@ import "slick-carousel/slick/slick-theme.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle, faTwitter, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import './HomePage.css';
-import { useEffect, useState, useCallback } from "react"; // Import useCallback
+import { useEffect, useState, useCallback } from "react";
 import Header from "../Header/Header";
 
 const HomePage = () => {
     const [apidata, setApidata] = useState({ books: [], total: 0 });
     const navigate = useNavigate();
 
-    const handleLogout = useCallback(() => { // Wrap handleLogout in useCallback
+    const handleLogout = useCallback(() => {
         cookies.remove('jwt_token');
         navigate('/Login');
-    }, [navigate]); // Add navigate as a dependency
+    }, [navigate]);
 
-    const fetchData = useCallback(async () => { // Wrap fetchData in useCallback
+    const fetchData = useCallback(async () => { 
         const jwtToken = cookies.get('jwt_token');
         if (jwtToken === undefined) {
             handleLogout();
@@ -38,7 +38,7 @@ const HomePage = () => {
 
         const json = await response.json();
         setApidata(json);
-    }, [handleLogout]); // Add handleLogout to the dependency array
+    }, [handleLogout]);
 
     useEffect(() => {
         const jwtToken = cookies.get('jwt_token');
@@ -47,7 +47,7 @@ const HomePage = () => {
         } else {
             fetchData();
         }
-    }, [fetchData, navigate]); // Include fetchData and navigate in the dependency array
+    }, [fetchData, navigate]);
 
     const settings = {
         dots: true,
@@ -88,7 +88,7 @@ const HomePage = () => {
                 <div className="slider-container Carousel-div">
                     <Slider {...settings}>
                         {apidata.books.map((slider) => (
-                            <div key={slider.id}> {/* Assuming 'id' is a unique identifier */}
+                            <div key={slider.id}>
                                 <img className="imagebox" src={slider.cover_pic} alt="NoImage" />
                                 <div className="caption"><h6>{slider.title}</h6></div>
                             </div>

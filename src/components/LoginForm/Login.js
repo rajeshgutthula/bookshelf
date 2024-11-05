@@ -69,14 +69,9 @@ const Login=()=>{
             </div>
             <div className="secondHalf">
               <div className="corner-btn">
-                <Link to="/Login">
-                  <button className="btn-login" type="submit">Login</button>
-                </Link>
-                {/* <button className="btn-login" type="submit">Login</button> */}
                 <Link to="/register">
                   <button className="btn-register" type="submit">Register</button>
                 </Link>
-                {/* <button className="btn-register" type="submit">Register</button> */}
               </div>
               <div className="loginformdiv">
                 <form onSubmit={handleSubmit} className="formitems">
@@ -85,9 +80,6 @@ const Login=()=>{
                   <input onChange={onChangeUsername} className="input" type="text" placeholder="Enter your name" value={loginValues.username}/>
                   <label className="h6 input-label">Password</label>
                   <input onChange={onChangePassword} className="input" type="password" placeholder="Enter your password" value={loginValues.password}/>
-                  {/* <div>
-                    <button className="submit-btn" type="submit">Sign In</button>
-                  </div> */}
                     <button className="submit-btn" type="submit">Sign In</button>
                     {showSubmitError &&<p className="error_message">*{errorMsg}</p>}
                   <div className="ancor">

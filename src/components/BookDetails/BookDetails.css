@@ -1,80 +1,77 @@
 .nav-bookshelves,
-.nav-home{
-    color:#0284C7;
-    font-family: Inter;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
+.nav-home {
+  color: #0284c7;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
 }
-.nav-btn{
-    padding:5px;
-    margin:0px;
-    color:white;
-    font-size:auto;
-    border: transparent;
-    border-radius: 4px 4px 4px 4px;
-    background-color:#0284C7;
+.nav-btn {
+  padding: 5px;
+  margin: 0px;
+  color: white;
+  font-size: auto;
+  border: transparent;
+  border-radius: 4px 4px 4px 4px;
+  background-color: #0284c7;
 }
-.backgrounddiv{
-    width:100%;
-    /* min-height:100%; */
-    /* max-height:400%; */
-    /* background-color:#64748B; */
-    background-color:#F8FAFC;
+.backgrounddiv {
+  width: 100%;
+  background-color: #f8fafc;
 }
-.card-div{
-    display: flex;
-    justify-content: center;
-    width:100%;
+.card-div {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
-.card-div-background{
-    background-color: #ffffff;
-    margin:50px;
+.card-div-background {
+  background-color: #ffffff;
+  margin: 50px;
 }
-.ratingDiv{
-    display: flex;
+.ratingDiv {
+  display: flex;
 }
-.cardDiv{
-    display: flex;
-    width:100%;
-    justify-content: center;
-    align-items: center;
+.cardDiv {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
-.font-forall{
-    font-family: Inter;
+.font-forall {
+  font-family: Inter;
 }
-.title{
-    color: #334155;
-    font-family: Inter;
-    font-size: 16px;
-    font-weight: 600;
-    margin:0px;
+.title {
+  color: #334155;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0px;
 }
-.author-descrition{
-    font-family: Inter;
-    padding-top:5px;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 16px;
+.author-descrition {
+  font-family: Inter;
+  padding-top: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
 }
-.books-detailsDiv{
-    padding-left:20px;
-    border-radius:9px;
-    margin-top:35px;
+.books-detailsDiv {
+  padding-left: 20px;
+  border-radius: 9px;
+  margin-top: 35px;
 }
-.cardImage{
-    max-width:133px;
-    border-radius:8px;
-    margin-top:35px;
+.cardImage {
+  max-width: 133px;
+  border-radius: 8px;
+  margin-top: 35px;
 }
-.underline{
-    width:90%;
-    size:2px;
+.underline {
+  width: 90%;
+  size: 2px;
 }
-.authorDetails{
-    margin-left:40px;
-    padding-bottom:2px;
+.authorDetails {
+  margin-left: 40px;
+  padding-bottom: 2px;
 }
-.staricon{
-    color:gold;
+.staricon {
+  color: gold;
 }
