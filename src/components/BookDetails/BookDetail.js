@@ -7,58 +7,84 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import cookies from 'js-cookie';
 
-
 const BookDetail = () => {
-//   const navigate = useNavigate();
     const { id } = useParams();
-    const [bookDetails, setBookDetails] = useState({books:[]});
+    const [bookDetails, setBookDetails] = useState({});
+    const [loading, setLoading] = useState(true); // Add loading state
+    const [error, setError] = useState(null); // Add error state
 
-    useEffect(()=>{
+    useEffect(() => {
         const fetchBookDetails = async () => {
-            const jwtToken = cookies.get('jwt_token');
-            const bookDetailsApi = await fetch(`https://apis.ccbp.in/book-hub/books/${id}`, {
-                headers: {
-                    Authorization: `Bearer ${jwtToken}`,
-                },
-            });
+            try {
+                const jwtToken = cookies.get('jwt_token');
+                const bookDetailsApi = await fetch(`https://apis.ccbp.in/book-hub/books/${id}`, {
+                    headers: {
+                        Authorization: `Bearer ${jwtToken}`,
+                    },
+                });
 
-            const bookDetailsJson = await bookDetailsApi.json();
-            setBookDetails(bookDetailsJson.book_details);
+                if (!bookDetailsApi.ok) {
+                    throw new Error('Failed to fetch book details');
+                }
+
+                const bookDetailsJson = await bookDetailsApi.json();
+                setBookDetails(bookDetailsJson.book_details);
+                setLoading(false); // Set loading to false after data is fetched
+            } catch (error) {
+                setError(error.message);
+                setLoading(false); // Set loading to false in case of error
+            }
         };
 
         fetchBookDetails();
     }, [id]);
 
-    console.log(bookDetails);
+    if (loading) {
+        return <div>Loading...</div>; // Display loading message
+    }
 
-    return(
+    if (error) {
+        return <div>Error: {error}</div>; // Display error message if fetch fails
+    }
+
+    return (
         <div className="backgrounddiv">
-            <Header/>
+            <Header />
             <div className="card-div-background">
                 <div className="cardDiv">
-                    <img className="cardImage" src={bookDetails.cover_pic} alt="No_image"/>
+                    {/* Displaying book image, fallback if not available */}
+                    <img
+                        className="cardImage"
+                        src={bookDetails.cover_pic || 'default_image_url'} // Fallback image
+                        alt={bookDetails.title || 'No image available'}
+                    />
                     <div className="books-detailsDiv">
-                        <h6 className="font-forall title">{bookDetails.title}</h6>
-                        <p className="font-forall author-descrition">{bookDetails.author_name}</p>
+                        <h6 className="font-forall title">{bookDetails.title || 'No title available'}</h6>
+                        <p className="font-forall author-descrition">
+                            {bookDetails.author_name || 'No author information'}
+                        </p>
                         <div className="ratingDiv">
-                            <p className="font-forall">Avg Rating: <FontAwesomeIcon className="staricon" icon={faStar}/></p>
-                            <p className="font-forall">{bookDetails.rating}</p>
+                            <p className="font-forall">
+                                Avg Rating: <FontAwesomeIcon className="staricon" icon={faStar} />
+                            </p>
+                            <p className="font-forall">{bookDetails.rating || 'N/A'}</p>
                         </div>
-                        <p className="font-forall">Status:<a className="font-forall" href="#0">{bookDetails.read_status}</a></p>
+                        <p className="font-forall">
+                            Status: <a className="font-forall" href="#0">{bookDetails.read_status || 'N/A'}</a>
+                        </p>
                     </div>
                 </div>
-                <hr className="underline"></hr>
+                <hr className="underline" />
                 <div className="authorDetails">
                     <h6 className="font-forall title">About Author</h6>
-                    <p className="font-forall">{bookDetails.about_author}</p>
+                    <p className="font-forall">{bookDetails.about_author || 'No information available'}</p>
                     <h6 className="font-forall title">About Book</h6>
-                    <p className="font-forall">{bookDetails.about_book}</p>
+                    <p className="font-forall">{bookDetails.about_book || 'No information available'}</p>
                 </div>
             </div>
-            <Footer/>
+            <Footer />
         </div>
-    )
-        
-}
+    );
+};
 
 export default BookDetail;

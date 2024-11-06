@@ -13,6 +13,35 @@
   width: 100%;
 }
 
+.bookmark-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 0.9em;
+  color: #333;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Default state of the bookmark icon */
+.bookmark-icon {
+  color: #aaa; /* Light gray when not in "Want to Read" */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* Active state when the book is in the "Want to Read" section */
+.bookmark-icon.active {
+  /* color: #f39c12; */
+  color: gold;
+}
+
+/* Add a hover effect for the bookmark icon */
+.bookmark-icon:hover {
+  color: #e67e22; /* Change to a darker shade of orange/yellow when hovered */
+  transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}
+
 /* Prevent horizontal scrolling */
 body {
   overflow-x: hidden;
@@ -101,7 +130,9 @@ body {
   display: flex;
 }
 
+/* Updated card-Div styling */
 .card-Div {
+  position: relative; /* Set position to relative for absolute positioning of the bookmark icon */
   display: flex;
   flex-direction: row;
   width: 300px;
@@ -206,6 +237,13 @@ body {
     width: 100%;
     padding: 0px;
   }
+  .bookmark-icon {
+    font-size: 1em; /* Reduce size for tablet */
+  }
+  .bookmark-icon:hover {
+    color: #0369a1;
+    transform: scale(1.15); /* Slight hover effect for tablet */
+  }
 }
 
 /* Mobile Styles (up to 768px) */
@@ -276,5 +314,12 @@ body {
   .card-Div {
     width: 100%;
     margin: 10px 0;
+  }
+  .bookmark-icon {
+    font-size: 0.9em; /* Further reduce size for mobile */
+  }
+  .bookmark-icon:hover {
+    color: #0ea5e9;
+    transform: scale(1.1); /* Subtle hover effect for mobile */
   }
 }
