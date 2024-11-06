@@ -37,7 +37,6 @@ const Bookshelves = () => {
 
         const booksJson = await booksApi.json();
         setTimeout(() => {
-            // Update books with the "Want to Read" flag
             const updatedBooks = booksJson.books.map(book => ({
                 ...book,
                 isWantToRead: wantToRead.includes(book.id)
@@ -58,21 +57,13 @@ const Bookshelves = () => {
     }, [fetchBookshelvesData, navigate]);
 
     const handleBookmarkToggle = (bookId) => {
-        // Check if the book is already in the "Want to Read" list
         const isAlreadyInWantToRead = wantToRead.includes(bookId);
-        
-        // Toggle the "Want to Read" status
         const updatedWantToRead = isAlreadyInWantToRead
-            ? wantToRead.filter(id => id !== bookId) // Remove from "Want to Read"
-            : [...wantToRead, bookId]; // Add to "Want to Read"
-        
-        // Save updated list to localStorage
+            ? wantToRead.filter(id => id !== bookId)
+            : [...wantToRead, bookId];
         localStorage.setItem('wantToRead', JSON.stringify(updatedWantToRead));
-
-        // Update the local state
         setWantToRead(updatedWantToRead);
 
-        // Update the fetchedBooks and filteredBooks state to reflect changes
         const updatedBooks = fetchedBooks.books.map(book => ({
             ...book,
             isWantToRead: updatedWantToRead.includes(book.id)

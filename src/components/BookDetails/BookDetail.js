@@ -10,8 +10,8 @@ import cookies from 'js-cookie';
 const BookDetail = () => {
     const { id } = useParams();
     const [bookDetails, setBookDetails] = useState({});
-    const [loading, setLoading] = useState(true); // Add loading state
-    const [error, setError] = useState(null); // Add error state
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const fetchBookDetails = async () => {
@@ -29,10 +29,10 @@ const BookDetail = () => {
 
                 const bookDetailsJson = await bookDetailsApi.json();
                 setBookDetails(bookDetailsJson.book_details);
-                setLoading(false); // Set loading to false after data is fetched
+                setLoading(false);
             } catch (error) {
                 setError(error.message);
-                setLoading(false); // Set loading to false in case of error
+                setLoading(false);
             }
         };
 
@@ -40,11 +40,11 @@ const BookDetail = () => {
     }, [id]);
 
     if (loading) {
-        return <div>Loading...</div>; // Display loading message
+        return <div>Loading...</div>;
     }
 
     if (error) {
-        return <div>Error: {error}</div>; // Display error message if fetch fails
+        return <div>Error: {error}</div>;
     }
 
     return (
@@ -52,10 +52,9 @@ const BookDetail = () => {
             <Header />
             <div className="card-div-background">
                 <div className="cardDiv">
-                    {/* Displaying book image, fallback if not available */}
                     <img
                         className="cardImage"
-                        src={bookDetails.cover_pic || 'default_image_url'} // Fallback image
+                        src={bookDetails.cover_pic || 'default_image_url'}
                         alt={bookDetails.title || 'No image available'}
                     />
                     <div className="books-detailsDiv">
