@@ -30,8 +30,8 @@ const BookCard = (props) => {
                     <h6 className="font-for-all heading">{cardData.title}</h6>
                     <p className="font-for-all descrition">{cardData.author_name}</p>
                     <div className="rating-div">
-                        <p className="font-for-all">Avg Rating: <FontAwesomeIcon className="stars" icon={faStar} /></p>
-                        <p className="font-for-all">{cardData.rating}</p>
+                        <p className="font-for-all">Avg Rating:</p>
+                        <p className="font-for-all"><FontAwesomeIcon className="stars" icon={faStar} />{cardData.rating}</p>
                     </div>
                     <p className="font-for-all">Status: <a className="font-for-all font-size" href="#0">{cardData.read_status}</a></p>
                 </div>
