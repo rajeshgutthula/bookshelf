@@ -36,6 +36,7 @@ const Login=()=>{
     }
     const response=await fetch(url,options)
       const data=await response.json()
+      console.log(data);
       if(response.ok===true){
         onSubmitSuccess(data.jwt_token);
       }
@@ -77,9 +78,9 @@ const Login=()=>{
                 <form onSubmit={handleSubmit} className="formitems">
                   <h1 className="main-heading">Login</h1>
                   <label className="h6 input-label">Username</label>
-                  <input onChange={onChangeUsername} className="input" type="text" placeholder="Enter your name" value={loginValues.username}/>
+                  <input onChange={onChangeUsername} className="input" type="text" placeholder="Username:rahul" value={loginValues.username}/>
                   <label className="h6 input-label">Password</label>
-                  <input onChange={onChangePassword} className="input" type="password" placeholder="Enter your password" value={loginValues.password}/>
+                  <input onChange={onChangePassword} className="input" type="password" placeholder="Password: rahul@2021" value={loginValues.password}/>
                     <button className="submit-btn" type="submit">Sign In</button>
                     {showSubmitError &&<p className="error_message">*{errorMsg}</p>}
                   <div className="ancor">
