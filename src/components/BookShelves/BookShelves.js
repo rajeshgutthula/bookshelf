@@ -17,7 +17,6 @@ const Bookshelves = () => {
     const [wantToRead, setWantToRead] = useState([]);
     const navigate = useNavigate();
 
-    // Fetch the "Want to Read" books from localStorage on component mount
     useEffect(() => {
         const savedWantToRead = JSON.parse(localStorage.getItem('wantToRead')) || [];
         setWantToRead(savedWantToRead);
@@ -25,6 +24,15 @@ const Bookshelves = () => {
 
     const searchEle = (event) => {
         setSearchValue(event.target.value);
+    };
+
+    const executeSearch = () => {
+        const filtereddata = { books: fetchedBooks.books.filter((value) => value.title.toLowerCase().includes(searchValue.toLowerCase())) };
+        if (filtereddata.books.length === 0) {
+            navigate('/Home');
+        } else {
+            setFilteredBooks(filtereddata);
+        }
     };
 
     const fetchBookshelvesData = useCallback(async () => {
@@ -101,6 +109,7 @@ const Bookshelves = () => {
                             <div className="text-div">
                                 <input 
                                     onChange={searchEle} 
+                                    onKeyDown={(e) => e.key === 'Enter' && executeSearch()}
                                     value={searchValue} 
                                     type="text" 
                                     className="form-control" 
@@ -108,14 +117,7 @@ const Bookshelves = () => {
                                     aria-label="Search books" 
                                     aria-describedby="search-icon" 
                                 />
-                                <span onClick={() => {
-                                    const filtereddata = { books: fetchedBooks.books.filter((value) => value.title.toLowerCase().includes(searchValue.toLowerCase())) };
-                                    if (filtereddata.books.length === 0) {
-                                        navigate('/Home');
-                                    } else {
-                                        setFilteredBooks(filtereddata);
-                                    }
-                                }} className="input-group-text">
+                                <span onClick={executeSearch} className="input-group-text">
                                     <FontAwesomeIcon icon={faSearch} />
                                 </span>
                             </div>
