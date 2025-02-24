@@ -31,7 +31,7 @@ const Header = () => {
     };
 
     return (
-        <AppBar position="static" sx={{ backgroundColor: "#ffffff", color: "#0284c7" }} className="navigationbar">
+        <AppBar position="fixed" sx={{ backgroundColor: "#ffffff", color: "#0284c7" }} className="navigationbar">
             <Toolbar>
                 <a className="navbar-brandimg" href="$">
                     <img className="brandlogo" src={logo} alt="homelogo" />

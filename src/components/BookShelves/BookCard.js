@@ -30,7 +30,7 @@ const BookCard = (props) => {
                     <h6 className="font-for-all heading">{cardData.title}</h6>
                     <p className="font-for-all descrition">{cardData.author_name}</p>
                     <div className="rating-div">
-                        <p className="font-for-all">Avg Rating:</p>
+                        <p className="font-for-all">Rating:</p>
                         <p className="font-for-all">
                             <FontAwesomeIcon className="stars" icon={faStar} />
                             {cardData.rating}

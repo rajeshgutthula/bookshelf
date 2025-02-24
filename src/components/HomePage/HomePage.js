@@ -1,3 +1,4 @@
+import React, { useState, useCallback, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import cookies from 'js-cookie';
 import Slider from "react-slick";
@@ -5,9 +6,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle, faTwitter, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
-import './HomePage.css';
-import { useEffect, useState, useCallback } from "react";
 import Header from "../Header/Header";
+// import logo from "../../images/Homelogo1.png"; // if needed
+import "./HomePage.css";
 
 const HomePage = () => {
     const [apidata, setApidata] = useState({ books: [], total: 0 });
@@ -75,15 +76,23 @@ const HomePage = () => {
         ]
     };
 
+    // Handler for Find Books button
+    const handleFindBooks = () => {
+        navigate('/Bookshelves', { state: { fromHome: true } });
+    };
+
     return (
         <div className="main-div">
             <Header />
             <h5 className="home-text">Find Your Next Favorite Books?</h5>
-            <p className="paragraph-content">You are in the right place. Tell us what titles or genres you have enjoyed in the past, and we will give you surprisingly insightful recommendations.</p>
+            <p className="paragraph-content">
+                You are in the right place. Tell us what titles or genres you have enjoyed in the past, 
+                and we will give you surprisingly insightful recommendations.
+            </p>
             <div className="top-rated-div">
                 <div className="top-rated-books">
                     <p className="top-rated-styles">Top Rated Books</p>
-                    <button className="find-butn">Find Books</button>
+                    <button className="find-butn" onClick={handleFindBooks}>Find Books</button>
                 </div>
                 <div className="slider-container Carousel-div">
                     <Slider {...settings}>
@@ -106,7 +115,7 @@ const HomePage = () => {
                 <p>Contact Us</p>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default HomePage;

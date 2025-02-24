@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import cookies from 'js-cookie';
 import BookCard from './BookCard';
 import Header from "../Header/Header";
@@ -16,18 +16,33 @@ const Bookshelves = () => {
     const [loading, setLoading] = useState(true);
     const [wantToRead, setWantToRead] = useState([]);
     const navigate = useNavigate();
+    const location = useLocation();
+
+    // Create a ref for the search input
+    const searchInputRef = useRef(null);
 
     useEffect(() => {
         const savedWantToRead = JSON.parse(localStorage.getItem('wantToRead')) || [];
         setWantToRead(savedWantToRead);
     }, []);
 
+    // Auto-focus the search input if navigated from HomePage
+    useEffect(() => {
+        if (location.state?.fromHome && searchInputRef.current) {
+            searchInputRef.current.focus();
+        }
+    }, [location.state]);
+
     const searchEle = (event) => {
         setSearchValue(event.target.value);
     };
 
     const executeSearch = () => {
-        const filtereddata = { books: fetchedBooks.books.filter((value) => value.title.toLowerCase().includes(searchValue.toLowerCase())) };
+        const filtereddata = { 
+            books: fetchedBooks.books.filter((value) =>
+                value.title.toLowerCase().includes(searchValue.toLowerCase())
+            ) 
+        };
         if (filtereddata.books.length === 0) {
             navigate('/Home');
         } else {
@@ -108,6 +123,7 @@ const Bookshelves = () => {
                             <h6>All Books</h6>
                             <div className="text-div">
                                 <input 
+                                    ref={searchInputRef} // attach the ref here
                                     onChange={searchEle} 
                                     onKeyDown={(e) => e.key === 'Enter' && executeSearch()}
                                     value={searchValue} 
@@ -140,6 +156,6 @@ const Bookshelves = () => {
             <Footer />
         </div>
     );
-}
+};
 
 export default Bookshelves;
