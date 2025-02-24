@@ -1,5 +1,5 @@
-/* Base Styles */
-.main-container {
+/* Full-page gradient background */
+.background-main {
   background-image: linear-gradient(
     to bottom right,
     rgb(112, 112, 199),
@@ -9,199 +9,117 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
   padding: 20px;
 }
 
-.middlebackground-div {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.middlediv {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  width: 100%;
-  max-width: 900px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/* Centered registration card */
+.register-card {
+  background-color: #fff;
   border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  background-color: rgba(255, 255, 255, 0.1);
+  text-align: center;
+  padding: 20px;
 }
 
-/* Image Container */
-.imagedivcontainer {
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #1a1a2e;
+/* Circular image container */
+.register-image-container {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid rgb(5, 5, 156);
 }
 
-.imageimg {
+.register-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 10px 0 0 10px;
 }
 
-/* Form Container */
-.formcontainer {
-  width: 50%;
-  padding: 20px;
+/* Registration content */
+.register-content {
+  padding: 0 20px;
+}
+
+.register-heading {
+  color: rgb(5, 5, 156);
+  margin-bottom: 20px;
+}
+
+/* Corner button styling for Login */
+.corner-btns {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.login-btn {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(5, 5, 156);
+  color: white;
+  cursor: pointer;
+}
+
+/* Registration form styling */
+.registration-form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  background-image: linear-gradient(
-    to bottom,
-    rgb(112, 112, 199),
-    rgb(5, 5, 156)
-  );
+  align-items: center;
 }
 
-.registrationformitems {
+.input-row {
+  display: flex;
+  gap: 20px;
   width: 100%;
-  max-width: 300px;
+  margin-bottom: 16px;
+}
+
+.input-group {
+  flex: 1;
   display: flex;
   flex-direction: column;
+  text-align: left;
+}
+
+.input-label {
+  margin-bottom: 5px;
+  color: rgb(5, 5, 156);
+  font-weight: bold;
 }
 
 .inputEle {
   width: 100%;
-  background-color: transparent;
-  border: 0;
-  border-bottom: 2px solid white;
-  color: white;
   padding: 10px;
-  margin-bottom: 16px;
-  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
 }
 
 .signup-btn {
   width: 100%;
   padding: 12px;
-  background-color: #1d53e8;
+  background-color: rgb(5, 5, 156);
   color: white;
-  border-radius: 5px;
   border: none;
+  border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+  margin-top: 10px;
 }
 
 .signup-btn:hover {
-  background-color: #1a46c2;
+  background-color: rgb(3, 3, 120);
 }
 
-.corner-btns {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.register-btn,
-.login-btn {
-  padding: 5px 10px;
-  margin: 0px 5px;
-  border-radius: 5px;
-  border-width: 1.5px;
-  cursor: pointer;
-  font-weight: bold;
-  background-color: rgba(29, 83, 232, 0.975);
-  color: white;
-}
-
-.register-btn:hover,
-.login-btn:hover {
-  background-color: rgba(29, 83, 232, 0.975);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transform: scale(1.05);
-  color: white;
-}
-
-/* Responsive Adjustments */
-
-/* For laptop and tablet screens */
-@media (max-width: 1024px) {
-  .middlediv {
-    max-width: 90%;
-    height: auto;
-  }
-
-  .imagedivcontainer {
-    width: 45%;
-  }
-
-  .formcontainer {
-    width: 55%;
-    padding: 20px;
-  }
-
-  .imageimg {
-    border-radius: 10px 0 0 10px;
-  }
-}
-
-@media (max-width: 768px) {
-  .middlediv {
+/* Responsive adjustments: Stack fields on smaller screens */
+@media (max-width: 600px) {
+  .input-row {
     flex-direction: column;
-    max-width: 600px;
-  }
-
-  .imagedivcontainer,
-  .formcontainer {
-    width: 100%;
-  }
-
-  .imageimg {
-    border-radius: 10px 10px 0 0;
-  }
-
-  .formcontainer {
-    padding: 20px;
-    align-items: center;
-  }
-
-  .registrationformitems {
-    max-width: 300px;
-  }
-
-  .inputEle {
-    font-size: 14px;
-  }
-
-  .signup-btn,
-  .register-btn,
-  .login-btn {
-    padding: 10px;
-    font-size: 14px;
-  }
-
-  .corner-btns {
-    justify-content: center;
-  }
-
-  .register-btn,
-  .login-btn {
-    width: 48%;
-    margin: 5px 0;
-  }
-}
-
-@media (max-width: 480px) {
-  .inputEle {
-    font-size: 12px;
-  }
-
-  .signup-btn,
-  .register-btn,
-  .login-btn {
-    font-size: 12px;
-    padding: 8px;
   }
 }

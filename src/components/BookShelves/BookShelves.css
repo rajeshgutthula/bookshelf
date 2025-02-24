@@ -26,21 +26,19 @@
 
 /* Default state of the bookmark icon */
 .bookmark-icon {
-  color: #aaa; /* Light gray when not in "Want to Read" */
-  cursor: pointer;
+  color: #aaa;
   transition: color 0.3s ease;
 }
 
-/* Active state when the book is in the "Want to Read" section */
+/* Active state for the bookmark icon */
 .bookmark-icon.active {
-  /* color: #f39c12; */
   color: gold;
 }
 
-/* Add a hover effect for the bookmark icon */
+/* Hover effect for the bookmark icon */
 .bookmark-icon:hover {
-  color: #e67e22; /* Change to a darker shade of orange/yellow when hovered */
-  transform: scale(1.1); /* Slightly enlarge the icon on hover */
+  color: #e67e22;
+  transform: scale(1.1);
 }
 
 /* Prevent horizontal scrolling */
@@ -58,9 +56,10 @@ body {
   width: 100%;
 }
 
+/* Category Heading Styles */
 .All-elements {
   font-family: Inter;
-  color: #0284c7;
+  color: #0284c7; /* Default blue for "All" */
   cursor: pointer;
   padding: 10px;
   border-radius: 5px;
@@ -69,11 +68,19 @@ body {
 
 .headingiteams {
   font-family: Inter;
-  color: #64748b;
+  color: #64748b; /* Gray for others by default */
   cursor: pointer;
   padding: 10px;
   border-radius: 5px;
   text-align: left;
+}
+
+/* Active state for category selections */
+.All-elements.active,
+.headingiteams.active {
+  color: #0284c7; /* Blue */
+  font-weight: bold;
+  background-color: #e0f2fe; /* Light blue background for clarity */
 }
 
 .bookscontainer {
@@ -94,7 +101,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0px 20px;
+  margin: 0 20px;
   max-height: 30px;
   width: 90%;
 }
@@ -133,7 +140,7 @@ body {
 
 /* Updated card-Div styling */
 .card-Div {
-  position: relative; /* Set position to relative for absolute positioning of the bookmark icon */
+  position: relative;
   display: flex;
   flex-direction: row;
   width: 300px;
@@ -167,7 +174,7 @@ body {
   font-family: Inter;
   font-size: 16px;
   font-weight: 600;
-  margin: 0px;
+  margin: 0;
   overflow-wrap: break-word;
 }
 
@@ -183,6 +190,20 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+
+/* Styling for no-results message */
+.no-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  color: #64748b;
+}
+
+.no-results-icon {
+  font-size: 3em;
+  margin-bottom: 10px;
 }
 
 /* Tablet Styles (768px - 1024px) */
@@ -231,19 +252,21 @@ body {
 
   .cards-main-container {
     width: 40%;
-    padding-left: 0px;
+    padding-left: 0;
   }
 
   .card-Div {
     width: 100%;
-    padding: 0px;
+    padding: 0;
   }
+
   .bookmark-icon {
-    font-size: 1em; /* Reduce size for tablet */
+    font-size: 1em;
   }
+
   .bookmark-icon:hover {
     color: #0369a1;
-    transform: scale(1.15); /* Slight hover effect for tablet */
+    transform: scale(1.15);
   }
 }
 
@@ -316,11 +339,13 @@ body {
     width: 100%;
     margin: 10px 0;
   }
+
   .bookmark-icon {
-    font-size: 0.9em; /* Further reduce size for mobile */
+    font-size: 0.9em;
   }
+
   .bookmark-icon:hover {
     color: #0ea5e9;
-    transform: scale(1.1); /* Subtle hover effect for mobile */
+    transform: scale(1.1);
   }
 }
